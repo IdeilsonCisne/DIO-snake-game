@@ -29,7 +29,7 @@ function criarCobrinha() {
 
 function drawFood() {
   context.fillStyle = "red";
-  context.fillRect(food.x, food.y, box, box)
+  context.fillRect(food.x, food.y, box, box);
 }
 
 document.addEventListener('keydown', update);
@@ -67,13 +67,11 @@ function iniciarJogo() {
   if (direction == "down") snakeY += box;
 
   if (snakeX != food.x || snakeY != food.y) {
-    snake.pop();
+    snake.pop(); //Remove último elemento do array
   } else {
     food.x = Math.floor(Math.random() * 15 + 1) * box;
     food.y = Math.floor(Math.random() * 15 + 1) * box;
   }
-
-  snake.pop(); //Remove último elemento do array
 
   let newHead = {
     x: snakeX,
